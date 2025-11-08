@@ -1,0 +1,709 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+body {
+  background-color: rgba(66, 6, 245, 0.39);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Gentium Book Plus', serif;
+  line-height: 1.6;
+  color: #000000;
+  transition: background-color 0.3s ease;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 10px;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.navbar {
+  grid-column: 1 / 11;
+  grid-row: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #D9D9D9;
+  font-family: 'Gentium Book Plus', serif;
+  font-weight: 400;
+  position: relative;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+#logo {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #000000;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 40px;
+  transition: 0.4s ease-in-out;
+  letter-spacing: 1px;
+  font-family: 'Dancing Script', cursive;
+  transition: font-size 0.3s ease, padding 0.3s ease;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  border-radius: 30px;
+}
+
+.navbar li a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #000000;
+  transition: 0.3s;
+  letter-spacing: 0.5px;
+  font-family: 'Gentium Book Plus', serif;
+  transition: font-size 0.3s ease, padding 0.3s ease;
+}
+
+.navbar li a:hover {
+  background-color: #373030;
+  color: #ffffff;
+}
+
+#menu {
+  display: none;
+  font-size: 1.5rem;
+  color: #000000;
+  cursor: pointer;
+  transition: font-size 0.3s ease, padding 0.3s ease;
+}
+
+.image-section {
+  grid-column: 1 / 6;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.image-section img {
+  border-radius: 50%;
+  width: 25vw;
+  height: 25vw;
+  max-width: 400px;
+  max-height: 400px;
+  min-width: 200px;
+  min-height: 200px;
+  object-fit: cover;
+  transition: max-width 0.3s ease, max-height 0.3s ease, min-width 0.3s ease, min-height 0.3s ease;
+}
+
+.text-section {
+  grid-column: 6 / 11;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 60px;
+  text-align: left;
+  font-family: 'Gentium Book Plus', serif;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+
+.text-section h1 {
+  font-size: 50px;
+  font-weight: 400;
+  color: #000000;
+  line-height: 100%;
+  margin-bottom: 20px;
+  font-family: 'Instrument Serif', serif;
+  margin-top: 30px;
+  transition: font-size 0.3s ease;
+}
+
+.text-section h2 {
+  font-size: 45px;
+  font-style: normal;
+  color: #000000;
+  margin-top: 10px;
+  float: right;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  font-family: 'Gentium Book Plus', serif;
+  transition: font-size 0.3s ease;
+}
+
+.text-section h3 {
+  font-family: Junge;
+  font-weight: 10;
+  font-style: Regular;
+  font-size: 20px;
+  padding-bottom: 0;
+  line-height: 100%;
+  letter-spacing: 0%;
+  float: right;
+  margin-left: 70px;
+  transition: font-size 0.3s ease, margin-left 0.3s ease;
+}
+
+.bible-verse {
+  grid-column: 1 / 11;
+  grid-row: 3;
+  text-align: center;
+  margin-top: 1vh;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000000;
+  font-style: italic;
+  line-height: 1.2;
+  padding: 5px;
+  font-family: 'Jacques Francois', serif;
+  margin-right: 0;
+  transition: font-size 0.3s ease;
+  word-wrap: break-word;
+}
+
+@media (min-width: 1201px) {
+  .image-section img {
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .text-section h1 {
+    font-size: 55px;
+  }
+
+  .text-section h2 {
+    font-size: 50px;
+    float: right;
+  }
+
+  .text-section h3 {
+    font-size: 25px;
+    float: right;
+    margin-left: 70px;
+  }
+
+  .bible-verse {
+    font-size: 40px;
+    margin-top: 0.5vh;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1200px) {
+  html, body {
+    overflow: auto;
+  }
+
+  .grid-container {
+    height: auto;
+    width: 100vw;
+  }
+
+  .image-section img {
+    max-width: 350px;
+    max-height: 350px;
+  }
+
+  .text-section h1 {
+    font-size: 45px;
+  }
+
+  .text-section h2 {
+    font-size: 40px;
+    float: right;
+  }
+
+  .text-section h3 {
+    font-size: 18px;
+    float: right;
+    margin-left: 50px;
+  }
+
+  .bible-verse {
+    font-size: 40px;
+    margin-top: 3vh;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 800px) {
+  html, body {
+    overflow: auto;
+  }
+
+  .grid-container {
+    height: auto;
+    width: 100vw;
+  }
+
+  .navbar {
+    background-color: #B0C4DE;
+  }
+
+  .navbar ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #B0C4DE;
+    flex-direction: column;
+    gap: 0;
+    border-radius: 0;
+    padding: 10px 0;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .navbar ul li {
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar ul li a {
+    display: block;
+    padding: 10px;
+  }
+
+  #menu {
+    display: block;
+    padding: 10px;
+  }
+
+  .text-section h1 {
+    font-size: 40px;
+  }
+
+  .text-section h2 {
+    font-size: 35px;
+    float: right;
+  }
+
+  .text-section h3 {
+    font-size: 15px;
+    float: right;
+    margin-left: 30px;
+  }
+
+  .bible-verse {
+    font-size: 35px;
+    margin-top: 5vh;
+  }
+
+  #logo {
+    font-size: 1.1rem;
+  }
+
+  .navbar ul li a {
+    font-size: 0.85rem;
+  }
+
+  #menu {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 700px) {
+  html, body {
+    overflow: auto;
+  }
+
+  .grid-container {
+    height: auto;
+    width: 100vw;
+  }
+
+  .navbar {
+    background-color: #B0C4DE;
+  }
+
+  .navbar ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #B0C4DE;
+    flex-direction: column;
+    gap: 0;
+    border-radius: 0;
+    padding: 10px 0;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .navbar ul li {
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar ul li a {
+    display: block;
+    padding: 10px;
+  }
+
+  #menu {
+    display: block;
+    padding: 10px;
+  }
+
+  .text-section h1 {
+    font-size: 35px;
+  }
+
+  .text-section h2 {
+    font-size: 30px;
+    float: right;
+  }
+
+  .text-section h3 {
+    font-size: 15px;
+    float: right;
+    margin-left: 20px;
+  }
+
+  .bible-verse {
+    font-size: 28px;
+    margin-top: 7vh;
+  }
+
+  #logo {
+    font-size: 1rem;
+  }
+
+  .navbar ul li a {
+    font-size: 0.8rem;
+  }
+
+  #menu {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 600px) {
+  html, body {
+    overflow: auto;
+  }
+
+  .grid-container {
+    height: auto;
+    width: 100vw;
+  }
+
+  .navbar {
+    background-color: #98FB98;
+  }
+
+  .navbar ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #98FB98;
+    flex-direction: column;
+    gap: 0;
+    border-radius: 0;
+    padding: 10px 0;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .navbar ul li {
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar ul li a {
+    display: block;
+    padding: 10px;
+  }
+
+  #menu {
+    display: block;
+    padding: 10px;
+  }
+
+  #logo {
+    font-size: 0.9rem;
+    padding: 8px 20px;
+  }
+
+  .navbar ul li a {
+    font-size: 0.75rem;
+    padding: 8px;
+  }
+
+  #menu {
+    font-size: 1.2rem;
+  }
+
+  .text-section h1 {
+    font-size: 30px;
+  }
+
+  .text-section h2 {
+    font-size: 25px;
+    float: right;
+  }
+
+  .text-section h3 {
+    font-size: 15px;
+    float: right;
+    margin-left: 15px;
+  }
+
+  .bible-verse {
+    font-size: 22px;
+    margin-top: 10vh;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 500px) {
+  html, body {
+    overflow: auto;
+  }
+
+  .grid-container {
+    height: auto;
+    width: 100vw;
+  }
+
+  .navbar ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #98FB98;
+    flex-direction: column;
+    gap: 0;
+    border-radius: 0;
+    padding: 10px 0;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .navbar ul li {
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar ul li a {
+    display: block;
+    padding: 10px;
+  }
+
+  #menu {
+    display: block;
+    padding: 10px;
+  }
+
+  .text-section h1 {
+    font-size: 28px;
+  }
+
+  .text-section h2 {
+    font-size: 22px;
+    float: right;
+  }
+
+  .text-section h3 {
+    font-size: 15px;
+    float: right;
+    margin-left: 10px;
+  }
+
+  .bible-verse {
+    font-size: 18px;
+    margin-top: 12vh;
+  }
+
+  #logo {
+    font-size: 0.8rem;
+    padding: 7px 18px;
+  }
+
+  .navbar ul li a {
+    font-size: 0.7rem;
+    padding: 7px;
+  }
+
+  #menu {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 301px) and (max-width: 400px) {
+  html, body {
+    overflow: auto;
+  }
+
+  .grid-container {
+    height: auto;
+    width: 100vw;
+  }
+
+  .navbar ul {
+    display: normal;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #98FB98;
+    flex-direction: column;
+    gap: 0;
+    border-radius: 0;
+    padding: 10px 0;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .navbar ul li {
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar ul li a {
+    display: block;
+    padding: 10px;
+  }
+
+  #menu {
+    display: block;
+    padding: 10px;
+  }
+
+  .text-section h1 {
+    font-size: 25px;
+  }
+
+  .text-section h2 {
+    font-size: 18px;
+    float: right;
+  }
+
+  .text-section h3 {
+    font-size: 14px;
+    float: right;
+    margin-left: 5px;
+  }
+
+  .bible-verse {
+    font-size: 18px;
+    margin-top: 15vh;
+  }
+
+  #logo {
+    font-size: 0.7rem;
+    padding: 6px 15px;
+  }
+
+  .navbar ul li a {
+    font-size: 0.65rem;
+    padding: 6px;
+  }
+
+  #menu {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 300px) {
+  html, body {
+    overflow: auto;
+  }
+
+  .grid-container {
+    height: auto;
+    width: 100vw;
+  }
+
+  .navbar ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #98FB98;
+    flex-direction: column;
+    gap: 0;
+    border-radius: 0;
+    padding: 10px 0;
+  }
+
+  .navbar ul.show {
+    display: normal;
+  }
+
+  .navbar ul li {
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar ul li a {
+    display: block;
+    padding: 10px;
+  }
+
+  #menu {
+    display: normal;
+    padding: 10px;
+  }
+
+  .text-section h1 {
+    font-size: 20px;
+  }
+
+  .text-section h2 {
+    font-size: 15px;
+    float: right;
+  }
+
+  .text-section h3 {
+    font-size: 12px;
+    float: right;
+    margin-left: 0;
+  }
+
+  .bible-verse {
+    font-size: 10px;
+    margin-top: 20vh;
+  }
+
+  #logo {
+    font-size: 0.6rem;
+    padding: 5px 12px;
+  }
+
+  .navbar ul li a {
+    font-size: 0.6rem;
+    padding: 5px;
+  }
+
+  #menu {
+    font-size: 0.9rem;
+  }
+}
